@@ -4,7 +4,7 @@ Flutter package for ruler type value picker
 
 ## Screenshots
 
-<img src="https://github.com/BoredNerdy/ruler_picker/blob/main/screenshots/ss.png" height="400em" width="225em" />
+<img src="https://raw.githubusercontent.com/BoredNerdy/ruler_picker/main/screenshots/ss.png" height="400em" width="225em" />
 
 ## Usage
 
