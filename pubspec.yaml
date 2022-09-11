@@ -1,5 +1,5 @@
 name: ruler_picker
-description: A new Flutter package project.
+description: Flutter package for ruler type value picker.
 version: 0.0.1
 author: BoredNerdy <theborednerdy@gmail.com>
 homepage: https://github.com/BoredNerdy/ruler_picker
