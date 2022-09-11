@@ -1,7 +1,8 @@
 name: ruler_picker
 description: A new Flutter package project.
 version: 0.0.1
-homepage:
+author: BoredNerdy <theborednerdy@gmail.com>
+homepage: https://github.com/BoredNerdy/ruler_picker
 
 environment:
   sdk: ">=2.17.6 <3.0.0"
