@@ -1,7 +1,6 @@
-name: ruler_picker
+name: ruler_picker_bn
 description: Flutter package for ruler type value picker.
 version: 0.0.1
-author: BoredNerdy <theborednerdy@gmail.com>
 homepage: https://borednerdy.com
 repository: https://github.com/BoredNerdy/ruler_picker
 
@@ -12,7 +11,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  scrollable_positioned_list:
+  scrollable_positioned_list:  ^0.3.4
 
 dev_dependencies:
   flutter_test:

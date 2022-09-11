@@ -1,4 +1,4 @@
-# ruler_picker
+# ruler_picker_bn
 
 Flutter package for ruler type value picker
 
@@ -8,7 +8,7 @@ Flutter package for ruler type value picker
 
 ## Usage
 
-[Example](https://github.com/BoredNerdy/ruler_picker/blob/main/examples/lib/main.dart)
+[Example](https://github.com/BoredNerdy/ruler_picker/blob/main/example/lib/main.dart)
 
 To use this package :
 
@@ -18,7 +18,7 @@ To use this package :
   dependencies:
     flutter:
       sdk: flutter
-    ruler_picker:
+    ruler_picker_bn:
 ```
 
 ### How to use

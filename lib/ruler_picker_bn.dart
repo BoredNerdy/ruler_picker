@@ -1,4 +1,4 @@
-library ruler_picker;
+library ruler_picker_bn;
 
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';

@@ -109,7 +109,7 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.8.1"
-  ruler_picker:
+  ruler_picker_bn:
     dependency: "direct main"
     description:
       path: ".."

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ruler_picker/ruler_picker.dart';
+import 'package:ruler_picker_bn/ruler_picker_bn.dart';
 
 void main() {
   runApp(const MyApp());
