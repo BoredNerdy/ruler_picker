@@ -1,19 +1,37 @@
 library ruler_picker_bn;
 
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 
+/// Flutter package for ruler type value picker.
+/// You can get horizontal and vertical ruler view with the package.
 class RulerPicker extends StatefulWidget {
-  const RulerPicker({Key? key,this.minValue=0,this.maxValue=250, this.startValue = 160, this.background = Colors.white, this.lineColor = Colors.black, this.padding = const EdgeInsets.all(4), this.direction = Axis.vertical, required this.onChange})
+  const RulerPicker(
+      {Key? key,
+      this.minValue = 0,
+      this.maxValue = 250,
+      this.startValue = 160,
+      this.background = Colors.white,
+      this.lineColor = Colors.black,
+      this.padding = const EdgeInsets.all(4),
+      this.direction = Axis.vertical,
+      required this.onChange})
       : super(key: key);
+  /// event for get to ruler value
   final ValueSetter<int> onChange;
+  /// set ruler background color
   final Color background;
+  /// set ruler padding value
   final EdgeInsets padding;
+  /// set ruler value line color
   final Color lineColor;
+  /// set ruler direction
   final Axis direction;
+  /// set ruler starting value position
   final int startValue;
-  final int minValue ;
+  /// set ruler min value
+  final int minValue;
+  /// set ruler max value
   final int maxValue;
   @override
   RulerPickerState createState() => RulerPickerState();
@@ -21,11 +39,13 @@ class RulerPicker extends StatefulWidget {
 
 class RulerPickerState extends State<RulerPicker> {
   final ItemScrollController controllerScroll = ItemScrollController();
-  final ItemPositionsListener itemPositionsListener = ItemPositionsListener.create();
+  final ItemPositionsListener itemPositionsListener =
+      ItemPositionsListener.create();
 
   @override
   Widget build(BuildContext context) {
-    return LayoutBuilder(builder: (BuildContext context, BoxConstraints constraints) {
+    return LayoutBuilder(
+        builder: (BuildContext context, BoxConstraints constraints) {
       return Stack(
         children: [
           Container(
@@ -54,18 +74,25 @@ class RulerPickerState extends State<RulerPicker> {
                                         top: widget.direction == Axis.vertical
                                             ? BorderSide(
                                                 color: index % 10 == 0
-                                                    ? widget.lineColor.withOpacity(0.54)
+                                                    ? widget.lineColor
+                                                        .withOpacity(0.54)
                                                     : index % 5 == 0
-                                                        ? widget.lineColor.withOpacity(0.36)
-                                                        : widget.lineColor.withOpacity(0.12))
+                                                        ? widget.lineColor
+                                                            .withOpacity(0.36)
+                                                        : widget.lineColor
+                                                            .withOpacity(0.12))
                                             : BorderSide.none,
-                                        left: widget.direction == Axis.horizontal
+                                        left: widget.direction ==
+                                                Axis.horizontal
                                             ? BorderSide(
                                                 color: index % 10 == 0
-                                                    ? widget.lineColor.withOpacity(0.54)
+                                                    ? widget.lineColor
+                                                        .withOpacity(0.54)
                                                     : index % 5 == 0
-                                                        ? widget.lineColor.withOpacity(0.36)
-                                                        : widget.lineColor.withOpacity(0.12))
+                                                        ? widget.lineColor
+                                                            .withOpacity(0.36)
+                                                        : widget.lineColor
+                                                            .withOpacity(0.12))
                                             : BorderSide.none,
                                       ),
                                     ),
@@ -91,13 +118,17 @@ class RulerPickerState extends State<RulerPicker> {
                                             16 -
                                             widget.padding.left -
                                             widget.padding.right,
-                                    margin: widget.direction == Axis.vertical ? const EdgeInsets.symmetric(vertical: 2) : const EdgeInsets.symmetric(horizontal: 2),
+                                    margin: widget.direction == Axis.vertical
+                                        ? const EdgeInsets.symmetric(
+                                            vertical: 2)
+                                        : const EdgeInsets.symmetric(
+                                            horizontal: 2),
                                   ),
                                 ],
                               );
                             }),
                       ),
-                      Icon(
+                      const Icon(
                         Icons.arrow_left,
                         color: Colors.black54,
                         size: 16,
@@ -126,18 +157,25 @@ class RulerPickerState extends State<RulerPicker> {
                                         top: widget.direction == Axis.vertical
                                             ? BorderSide(
                                                 color: index % 10 == 0
-                                                    ? widget.lineColor.withOpacity(0.54)
+                                                    ? widget.lineColor
+                                                        .withOpacity(0.54)
                                                     : index % 5 == 0
-                                                        ? widget.lineColor.withOpacity(0.36)
-                                                        : widget.lineColor.withOpacity(0.12))
+                                                        ? widget.lineColor
+                                                            .withOpacity(0.36)
+                                                        : widget.lineColor
+                                                            .withOpacity(0.12))
                                             : BorderSide.none,
-                                        left: widget.direction == Axis.horizontal
+                                        left: widget.direction ==
+                                                Axis.horizontal
                                             ? BorderSide(
                                                 color: index % 10 == 0
-                                                    ? widget.lineColor.withOpacity(0.54)
+                                                    ? widget.lineColor
+                                                        .withOpacity(0.54)
                                                     : index % 5 == 0
-                                                        ? widget.lineColor.withOpacity(0.36)
-                                                        : widget.lineColor.withOpacity(0.12))
+                                                        ? widget.lineColor
+                                                            .withOpacity(0.36)
+                                                        : widget.lineColor
+                                                            .withOpacity(0.12))
                                             : BorderSide.none,
                                       ),
                                     ),
@@ -163,7 +201,11 @@ class RulerPickerState extends State<RulerPicker> {
                                             16 -
                                             widget.padding.left -
                                             widget.padding.right,
-                                    margin: widget.direction == Axis.vertical ? const EdgeInsets.symmetric(vertical: 2) : const EdgeInsets.symmetric(horizontal: 2),
+                                    margin: widget.direction == Axis.vertical
+                                        ? const EdgeInsets.symmetric(
+                                            vertical: 2)
+                                        : const EdgeInsets.symmetric(
+                                            horizontal: 2),
                                   ),
                                 ],
                               );
@@ -178,15 +220,25 @@ class RulerPickerState extends State<RulerPicker> {
                   ),
           ),
           Align(
-            alignment: widget.direction == Axis.vertical ? Alignment.topCenter : Alignment.centerLeft,
+            alignment: widget.direction == Axis.vertical
+                ? Alignment.topCenter
+                : Alignment.centerLeft,
             child: Container(
-              width: widget.direction == Axis.vertical ? constraints.maxWidth : constraints.maxWidth * 0.2,
-              height:widget.direction == Axis.vertical ? constraints.maxHeight * 0.2 : constraints.maxHeight,
+              width: widget.direction == Axis.vertical
+                  ? constraints.maxWidth
+                  : constraints.maxWidth * 0.2,
+              height: widget.direction == Axis.vertical
+                  ? constraints.maxHeight * 0.2
+                  : constraints.maxHeight,
               decoration: BoxDecoration(
                   gradient: LinearGradient(
-                begin: widget.direction == Axis.vertical ? Alignment.topCenter : Alignment.centerLeft,
-                end: widget.direction == Axis.vertical ? Alignment.bottomCenter : Alignment.centerRight,
-                stops: [
+                begin: widget.direction == Axis.vertical
+                    ? Alignment.topCenter
+                    : Alignment.centerLeft,
+                end: widget.direction == Axis.vertical
+                    ? Alignment.bottomCenter
+                    : Alignment.centerRight,
+                stops: const [
                   0.2,
                   0.4,
                   0.6,
@@ -202,16 +254,25 @@ class RulerPickerState extends State<RulerPicker> {
             ),
           ),
           Align(
-            alignment:widget.direction == Axis.vertical ? Alignment.bottomCenter : Alignment.centerRight,
+            alignment: widget.direction == Axis.vertical
+                ? Alignment.bottomCenter
+                : Alignment.centerRight,
             child: Container(
-
-              width: widget.direction == Axis.vertical ? constraints.maxWidth : constraints.maxWidth * 0.2,
-              height:widget.direction == Axis.vertical ? constraints.maxHeight * 0.2 : constraints.maxHeight,
+              width: widget.direction == Axis.vertical
+                  ? constraints.maxWidth
+                  : constraints.maxWidth * 0.2,
+              height: widget.direction == Axis.vertical
+                  ? constraints.maxHeight * 0.2
+                  : constraints.maxHeight,
               decoration: BoxDecoration(
                   gradient: LinearGradient(
-                begin: widget.direction == Axis.vertical ? Alignment.topCenter : Alignment.centerLeft,
-                end: widget.direction == Axis.vertical ? Alignment.bottomCenter : Alignment.centerRight,
-                stops: [
+                begin: widget.direction == Axis.vertical
+                    ? Alignment.topCenter
+                    : Alignment.centerLeft,
+                end: widget.direction == Axis.vertical
+                    ? Alignment.bottomCenter
+                    : Alignment.centerRight,
+                stops: const [
                   0.2,
                   0.4,
                   0.6,
@@ -241,14 +302,19 @@ class RulerPickerState extends State<RulerPicker> {
       if (positions.isNotEmpty) {
         min = positions
             .where((ItemPosition position) => position.itemTrailingEdge > 0)
-            .reduce((ItemPosition min, ItemPosition position) => position.itemTrailingEdge < min.itemTrailingEdge ? position : min)
+            .reduce((ItemPosition min, ItemPosition position) =>
+                position.itemTrailingEdge < min.itemTrailingEdge
+                    ? position
+                    : min)
             .index;
         max = positions
             .where((ItemPosition position) => position.itemLeadingEdge < 1)
-            .reduce((ItemPosition max, ItemPosition position) => position.itemLeadingEdge > max.itemLeadingEdge ? position : max)
+            .reduce((ItemPosition max, ItemPosition position) =>
+                position.itemLeadingEdge > max.itemLeadingEdge ? position : max)
             .index;
       }
-      int position = ((((max! - min!) / 2)) + min).toInt() - 2520 + widget.startValue ;
+      int position =
+          ((((max! - min!) / 2)) + min).toInt() - 2520 + widget.startValue;
       int value = position < widget.minValue
           ? widget.minValue
           : position > widget.maxValue
@@ -257,34 +323,5 @@ class RulerPickerState extends State<RulerPicker> {
       widget.onChange(value);
     });
   }
-
-  /* Widget get positionsView => ValueListenableBuilder<Iterable<ItemPosition>>(
-        valueListenable: itemPositionsListener.itemPositions,
-        builder: (context, positions, child) {
-          int? min;
-          int? max;
-          if (positions.isNotEmpty) {
-            min = positions
-                .where((ItemPosition position) => position.itemTrailingEdge > 0)
-                .reduce((ItemPosition min, ItemPosition position) => position.itemTrailingEdge < min.itemTrailingEdge ? position : min)
-                .index;
-            max = positions
-                .where((ItemPosition position) => position.itemLeadingEdge < 1)
-                .reduce((ItemPosition max, ItemPosition position) => position.itemLeadingEdge > max.itemLeadingEdge ? position : max)
-                .index;
-          }
-          int position = ((((max! - min!) / 2)) + min).toInt() - 2400;
-          int value = position < 0
-              ? 0
-              : position > 250
-                  ? 250
-                  : position;
-            widget.returnValue = value;
-          return Text(
-            '${value.toString().padLeft(3,'0')} cm',
-            style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold, color: Colors.black87),
-          );
-        },
-      );*/
 
 }

@@ -112,10 +112,10 @@ packages:
   ruler_picker_bn:
     dependency: "direct main"
     description:
-      path: ".."
-      relative: true
-    source: path
-    version: "0.0.1"
+      name: ruler_picker_bn
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.0.2"
   scrollable_positioned_list:
     dependency: transitive
     description:

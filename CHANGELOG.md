@@ -5,3 +5,7 @@
 ## 0.0.2
 
 * readme file edited
+
+## 0.0.3
+
+* Made improvements for pub points.
