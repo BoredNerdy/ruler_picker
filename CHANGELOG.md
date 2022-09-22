@@ -9,3 +9,11 @@
 ## 0.0.3
 
 * Made improvements for pub points.
+
+## 0.0.4
+
+* Made improvements for pub points.
+
+## 0.0.5
+
+* Example screenshots added.

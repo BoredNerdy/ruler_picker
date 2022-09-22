@@ -17,20 +17,28 @@ class RulerPicker extends StatefulWidget {
       this.direction = Axis.vertical,
       required this.onChange})
       : super(key: key);
+
   /// event for get to ruler value
   final ValueSetter<int> onChange;
+
   /// set ruler background color
   final Color background;
+
   /// set ruler padding value
   final EdgeInsets padding;
+
   /// set ruler value line color
   final Color lineColor;
+
   /// set ruler direction
   final Axis direction;
+
   /// set ruler starting value position
   final int startValue;
+
   /// set ruler min value
   final int minValue;
+
   /// set ruler max value
   final int maxValue;
   @override
@@ -323,5 +331,4 @@ class RulerPickerState extends State<RulerPicker> {
       widget.onChange(value);
     });
   }
-
 }
