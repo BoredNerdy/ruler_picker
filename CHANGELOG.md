@@ -17,3 +17,7 @@
 ## 0.0.5
 
 * Example screenshots added.
+
+## 0.0.6
+
+* Made some performance improvements.

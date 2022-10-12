@@ -1,5 +1,6 @@
 library ruler_picker_bn;
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 
@@ -300,9 +301,11 @@ class RulerPickerState extends State<RulerPicker> {
     });
   }
 
+  int prevValue = 0;
   @override
   void initState() {
     super.initState();
+
     itemPositionsListener.itemPositions.addListener(() {
       var positions = itemPositionsListener.itemPositions.value;
       int? min;
@@ -320,15 +323,21 @@ class RulerPickerState extends State<RulerPicker> {
             .reduce((ItemPosition max, ItemPosition position) =>
                 position.itemLeadingEdge > max.itemLeadingEdge ? position : max)
             .index;
+        int position =
+            ((((max! - min!) / 2)) + min).toInt() - 2520 + widget.startValue;
+        int value = position < widget.minValue
+            ? widget.minValue
+            : position > widget.maxValue
+                ? widget.maxValue
+                : position;
+        if (prevValue != value) {
+          widget.onChange(value);
+          prevValue = value;
+        }
+        if (kDebugMode) {
+          print("prevValue : $prevValue value : $value");
+        }
       }
-      int position =
-          ((((max! - min!) / 2)) + min).toInt() - 2520 + widget.startValue;
-      int value = position < widget.minValue
-          ? widget.minValue
-          : position > widget.maxValue
-              ? widget.maxValue
-              : position;
-      widget.onChange(value);
     });
   }
 }
